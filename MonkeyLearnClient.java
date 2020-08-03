@@ -12,7 +12,7 @@ import com.monkeylearn.MonkeyLearnException;
 import com.monkeylearn.MonkeyLearnResponse;
 
 public class MonkeyLearnClient {
-	private static final String API_KEY = "9b45e3bf0e11d40908c4b4e0d1a7abb132ad0a83";// make sure change it to your api key.
+	private static final String API_KEY = "api_key";// make sure change it to your api key.
        public static void main(String[] args) {
 		
 		String[] textList = {
@@ -42,7 +42,7 @@ public class MonkeyLearnClient {
 		ExtraParam[] extraParams = { new ExtraParam("max_keywords", "3") };
 		MonkeyLearnResponse response;
 		try {
-			response = ml.extractors.extract("ex_YCya9nrn", text, extraParams);//change to your model id
+			response = ml.extractors.extract("model_id", text, extraParams);//change to your model id
 			JSONArray resultArray = response.arrayResult;
 			return getKeywords(resultArray);
 		} catch (MonkeyLearnException e) {// it’s likely to have an exception
